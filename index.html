@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Fantasy Kartenspiel</title>
+  <style>
+    body {
+      background: #1e1e2f;
+      font-family: 'Segoe UI', sans-serif;
+      color: #fff;
+      text-align: center;
+    }
+    .card-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 50px;
+      gap: 20px;
+    }
+    .card {
+      background: #2a2a3d;
+      border: 2px solid #555;
+      border-radius: 10px;
+      width: 150px;
+      padding: 10px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    .card:hover {
+      transform: scale(1.05);
+      border-color: #88f;
+    }
+    .card img {
+      width: 100%;
+      height: auto;
+      border-radius: 6px;
+    }
+    .log {
+      margin-top: 30px;
+      font-size: 18px;
+      color: #aaffcc;
+    }
+  </style>
+</head>
+<body>
+  <h1>Fantasy Karten-Demo</h1>
+  <div class="card-container">
+    <div class="card" onclick="playCard('Flammenwyrm')">
+      <img src="https://via.placeholder.com/150/FF5733/FFFFFF?text=Drache" alt="Flammenwyrm">
+      <h3>Flammenwyrm</h3>
+      <p>ATK: 8 | HP: 5</p>
+      <small>Ein uralter Drache, der Feuer regnen lässt.</small>
+    </div>
+    <div class="card" onclick="playCard('Runenmagierin')">
+      <img src="https://via.placeholder.com/150/5D6DFF/FFFFFF?text=Magierin" alt="Runenmagierin">
+      <h3>Runenmagierin</h3>
+      <p>ATK: 4 | HP: 6</p>
+      <small>Beherrscht mächtige Zauber aus alten Zeiten.</small>
+    </div>
+    <div class="card" onclick="playCard('Schattenritter')">
+      <img src="https://via.placeholder.com/150/333333/FFFFFF?text=Ritter" alt="Schattenritter">
+      <h3>Schattenritter</h3>
+      <p>ATK: 6 | HP: 7</p>
+      <small>Ein gefallener Held mit dunkler Macht.</small>
+    </div>
+  </div>
+
+  <div class="log" id="log">Wähle eine Karte aus.</div>
+
+  <script>
+    function playCard(name) {
+      document.getElementById('log').innerText = `Du hast ${name} gespielt!`;
+    }
+  </script>
+</body>
+</html>
